@@ -233,9 +233,9 @@ with col_g:
             "bar": {"color": "#6366F1", "thickness": 0.3},
             "bgcolor": "#F1F5F9",
             "steps": [
-                {"range": [0.3, 2], "color": "#DCFCE7"},
-                {"range": [2, 5], "color": "#FEF9C3"},
-                {"range": [5, 10], "color": "#FEE2E2"},
+                {"range": [0.3, 2], "color": "#0CA7E9"},
+                {"range": [2, 5], "color": "#EE0CE6"},
+                {"range": [5, 10], "color": "#FB7F03"},
             ],
             "threshold": {
                 "line": {"color": "#6366F1", "width": 3},
@@ -296,7 +296,7 @@ with col_d:
         "Harga Rata-Rata (M)": district_mean_price.values / 1e9
     }).sort_values("Harga Rata-Rata (M)", ascending=True)
 
-    colors = ["#6366F1" if d == district else "#CBD5E1" for d in df_dist["District"]]
+    colors = ["#6366F1" if d == district else "#FA0505" for d in df_dist["District"]]
     fig_dist = go.Figure(go.Bar(
         x=df_dist["Harga Rata-Rata (M)"],
         y=df_dist["District"],
@@ -319,8 +319,8 @@ with col_d:
         height=max(300, len(district_mean_price) * 28),
         margin=dict(t=40, b=30, l=10, r=60),
         paper_bgcolor="white", plot_bgcolor="white",
-        xaxis=dict(gridcolor="#F1F5F9"),
-        yaxis=dict(gridcolor="#F1F5F9")
+        xaxis=dict(gridcolor="#0E7EED"),
+        yaxis=dict(gridcolor="#F7B009")
     )
     st.plotly_chart(fig_dist, use_container_width=True)
 
